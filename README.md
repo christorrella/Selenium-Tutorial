@@ -1,2 +1,11 @@
-# Selenium-Tutorial
-Following a set of YouTube tutorials to set up and use Selenium
+# Selenium Tutorial
+As part of an effort to add projects to my portfolio, I read some of the Selenium documentation and followed a set of YouTube tutorials totaling 1.5hrs to set up and use Selenium, which is a Python package that automates interactions with web pages through a web driver.
+## Topics Covered
+The individual steps that were covered in this tutorial:
+1. Setting up Selenium and making a simple script ([Commit](https://github.com/christorrella/Selenium-Tutorial/commit/aee13eb4c0f95dccd4d3b69be1c1161ed0bf06d6), [YouTube](https://www.youtube.com/watch?v=Xjv1sY630Uc&list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ&index=1&t=4s))
+2. Locating elements in HTML ([Commit](https://github.com/christorrella/Selenium-Tutorial/commit/90226ffbf35002a7e34a30a051a4d54c9b187f0d), [YouTube](https://www.youtube.com/watch?v=b5jt2bhSeXs&list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ&index=2&t=2s))
+3. Navigating pages and interacting with elements ([Commit](https://github.com/christorrella/Selenium-Tutorial/commit/7846ce0f8743319ccf208a56ab4ae77225904e35), [YouTube](https://www.youtube.com/watch?v=U6gbGk5WPws&list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ&index=3))
+4. Creating ActionChains and automating an online game, "Cookie Clicker" ([Commit](https://github.com/christorrella/Selenium-Tutorial/commit/5706b047fd24ff3fa2fb11cb4d0e17b4277ef771), [YouTube](https://www.youtube.com/watch?v=OISEEL5eBqg&list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ&index=4))
+5. Implementing the UnitTest Framework ([Commit](https://github.com/christorrella/Selenium-Tutorial/commit/1b7b8b01b7b11b0295bcd573bf507e9af66d877c), [YouTube Part 1](https://www.youtube.com/watch?v=9_5Wqgni_Xw&list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ&index=5&t=303s)/[YouTube Part 2](https://www.youtube.com/watch?v=O_sIPPA4euw&list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ&index=6))
+## Key Takeaways
+Going into this tutorial, I had little understanding of what Selenium was or how it could be useful. After completing this tutorial, it seems to me that Selenium is an obvious choice for web-based projects that need to automate Unit Testing to reduce the amount of work needed to do a particularly repetitive task. I look forward to creating a project on my own with Selenium, as it makes interacting with elements on a webpage intuitive and nearly effortless.
