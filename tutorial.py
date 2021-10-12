@@ -1,15 +1,7 @@
 # Webdriver is used for interasction between Selenium and Chrome
 from selenium import webdriver
 
-# Keys are used an inputs into the page from an automated keyboard
-from selenium.webdriver.common.keys import Keys
-import time
-
-# Explicit waits
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
+from selenium.webdriver.common.action_chains import ActionChains
 
 # Specify path for the Chrome webdriver
 PATH = "./driver/chromedriver"
@@ -18,30 +10,35 @@ PATH = "./driver/chromedriver"
 driver = webdriver.Chrome(PATH)
 
 # Open the Chrome browser with the http target of Google
-driver.get("https://www.techwithtim.net/")
+driver.get("https://orteil.dashnet.org/cookieclicker/")
 
+# Implicit wait, exactly 5 seconds (diff from explicit wait)
+driver.implicitly_wait(5)
 
-# Click three links on pages by link text and ID, and then go back in browser to root website
-# Using explicit waits
-try:
-    link = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.LINK_TEXT, "Python Programming"))
-    )
-    link.click()
+cookie = driver.find_element_by_id("bigCookie")
+cookie_count = driver.find_element_by_id("cookies")
 
-    link = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.LINK_TEXT, "Beginner Python Tutorials"))
-    )
-    link.click()
+# get upgrades list from most expensive item to least
+items = [driver.find_element_by_id("productPrice" + str(i)) for i in range(1,-1,-1)]
 
-    link = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.ID, "sow-button-19310003"))
-    )
-    link.click()
+# Set up ActionChains obj that will act on the Chrome driver
+# Action Chains contain a queue of steps that can be carried out as a set
+# Perform those actions any time with .perform func
+actions = ActionChains(driver)
+actions.click(cookie)
 
-    driver.back()
-    driver.back()
-    driver.back()
+# do this 5,000 times
+for i in range(5000):
+    actions.perform()
+    count = int(cookie_count.text.split(" ")[0])
+    print(count)
+    for item in items:
+        value = int(item.text)
 
-except:
-    driver.quit()
+        # if we have enough cookies, buy an upgrade
+
+        if value <= count:
+            upgrade_actions = ActionChains(driver)
+            upgrade_actions.move_to_element(item)
+            upgrade_actions.click()
+            upgrade_actions.perform()
